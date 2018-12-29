@@ -1,0 +1,60 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    font-family: system-ui;
+}
+
+/* ---------------------- *\
+    BARRA DE NAVEGACION
+\* ---------------------- */
+
+header {
+    background-color: #343a40;
+}
+
+nav {
+    max-width: 1024px;
+    height: 70px;
+    margin: 0 auto;
+    background-color: #343a40;
+
+    display: grid;
+    grid-template-columns: 3fr 2fr; 
+}
+
+.navbar-titulo {
+    color: white;
+    margin: 0 0 0 10px;;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-lista {
+    height: inherit;
+    padding: 0;
+    margin: 0;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; 
+}
+
+.elemento-lista {
+    list-style-type: none;
+    height: inherit;
+}
+
+.elemento-lista .enlace {
+    color: #9a9d93;
+    font-weight: 500;
+    text-decoration: none;
+    
+    height: inherit;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.elemento-lista .enlace:hover {
+    color: #c9ccbe;
+}
