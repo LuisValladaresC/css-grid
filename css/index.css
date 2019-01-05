@@ -1,19 +1,23 @@
 body {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     margin: 0;
     font-family: system-ui;
+}
+
+.container {
+    background-color: #343a40;
+}
+
+div.container {
+    background-color: white;
 }
 
 /* ---------------------- *\
     BARRA DE NAVEGACION
 \* ---------------------- */
 
-header {
-    background-color: #343a40;
-}
-
-nav {
+.navbar {
     max-width: 1024px;
     height: 70px;
     margin: 0 auto;
@@ -23,38 +27,65 @@ nav {
     grid-template-columns: 3fr 2fr; 
 }
 
-.navbar-titulo {
-    color: white;
-    margin: 0 0 0 10px;;
-    display: flex;
-    align-items: center;
-}
+    .navbar-titulo {
+        color: white;
+        margin: 0 0 0 10px;;
+        display: flex;
+        align-items: center;
+    }
 
-.navbar-lista {
-    height: inherit;
-    padding: 0;
-    margin: 0;
+    .navbar-lista {
+        height: inherit;
+        padding: 0;
+        margin: 0;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr; 
+    }
+
+        .elemento-lista {
+            list-style-type: none;
+            height: inherit;
+        }
+
+            .elemento-lista .enlace {
+                color: #9a9d93;
+                font-weight: 500;
+                text-decoration: none;
+                
+                height: inherit;
+                
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .elemento-lista .enlace:hover {
+                color: #c9ccbe;
+            }
+
+/* ---------------------- *\
+    SECCION INSTAGRAM
+\* ---------------------- */
+
+#instagram {
+    max-width: 1024px;
+    margin: 0 auto;
 
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-columns: repeat(3, 1fr);
+
+    grid-gap: 28px;
 }
 
-.elemento-lista {
-    list-style-type: none;
-    height: inherit;
-}
+    .link-container-imagen {
+        display: block;
+    }
 
-.elemento-lista .enlace {
-    color: #9a9d93;
-    font-weight: 500;
-    text-decoration: none;
-    
-    height: inherit;
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.elemento-lista .enlace:hover {
-    color: #c9ccbe;
-}
+    .container-imagen {
+        margin: 0;
+    }
+
+    .container-imagen img {
+        width: 100%;
+        vertical-align: top;
+    }
