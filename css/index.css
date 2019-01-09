@@ -1,3 +1,7 @@
+/* ---------------------- *\
+    GENERALES
+\* ---------------------- */
+
 body {
     width: 100%;
     height: 100%;
@@ -11,7 +15,7 @@ body {
 }
 
 div.container {
-    background-color: white;
+    background-color: #fafafa;
 }
 
 /* ---------------------- *\
@@ -139,7 +143,7 @@ div.container {
     MEDIA QUERIES 
 \* ---------------------- */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
 
     /* -- BARRA DE NAVEGACION -- */
 
@@ -159,9 +163,24 @@ div.container {
                     font-weight: 500;
                     font-size: 0.9em
                 } 
+
+    /* -- SECCION DE INSTAGRAM -- */
+
+    .instagram-linea {
+        margin: 18px 0 0;
+    }
+    
+    .instagram-encabezado {
+        font-size: .8em;
+        padding: .7em 0;
+    }
+    
+    .instagram-grilla {
+        grid-gap: 3px;
+    }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 479px) {
 
     /* -- BARRA DE NAVEGACION -- */
 
@@ -181,4 +200,19 @@ div.container {
                 font-weight: 500;
                 font-size: 0.7em
             } 
+
+    /* -- SECCION DE INSTAGRAM -- */
+    
+    .instagram-linea {
+        margin: 13px 0 0;
+    }
+
+    .instagram-encabezado {
+        font-size: .7em;
+        padding: .6em 0;
+    }
+
+    .instagram-capa-texto {
+        font-size: 0.9em;
+    }
 }
