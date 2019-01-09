@@ -7,6 +7,7 @@ body {
 
 .container {
     background-color: #343a40;
+    min-width: 320px;
 }
 
 div.container {
@@ -37,14 +38,14 @@ div.container {
     .navbar-lista {
         height: inherit;
         padding: 0;
-        margin: 0;
+        margin: 0 auto;
 
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr; 
+        display: flex;
     }
 
         .elemento-lista {
             list-style-type: none;
+            padding: 0 30px;
             height: inherit;
         }
 
@@ -67,6 +68,24 @@ div.container {
     SECCION INSTAGRAM
 \* ---------------------- */
 
+.instagram-linea {
+    width: 100%;
+    border: solid 0.5px #cecece;
+    margin: 28px 0 0;
+}
+
+.instagram-encabezado {
+    font-size: .9em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    width: fit-content;
+
+    border-top: black solid 0.5px;
+    padding: 1em 0;
+    margin: 0 auto;
+}
+
 .instagram-grilla {
     max-width: 1024px;
     margin: 0 auto;
@@ -76,24 +95,6 @@ div.container {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 28px;
 }
-
-    .instagram-linea {
-        width: 100%;
-        border: solid 0.5px #cecece;
-        margin: 28px 0 0;
-    }
-
-    .instagram-encabezado {
-        font-size: .9em;
-        font-weight: 600;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        width: fit-content;
-
-        border-top: black solid 0.5px;
-        padding: 1em 0;
-        margin: 0 auto;
-    }
 
     .instagram-link-container {
         width: 100%;
@@ -133,3 +134,51 @@ div.container {
                 align-items: center;
                 justify-content: space-evenly;
             }
+
+/* ---------------------- *\
+    MEDIA QUERIES 
+\* ---------------------- */
+
+@media screen and (max-width: 768px) {
+
+    /* -- BARRA DE NAVEGACION -- */
+
+    .navbar {
+        height: 55px;
+    }
+    
+        .navbar-titulo {
+            font-size: 1.4em;
+        }
+
+        .elemento-lista {
+            padding: 0 15px;
+        }
+    
+                .elemento-lista .enlace {
+                    font-weight: 500;
+                    font-size: 0.9em
+                } 
+}
+
+@media screen and (max-width: 480px) {
+
+    /* -- BARRA DE NAVEGACION -- */
+
+    .navbar {
+        height: 45px;
+    }
+    
+        .navbar-titulo {
+            font-size: 1.1em;
+        }
+
+        .elemento-lista {
+            padding: 0 10px;
+        }
+    
+            .elemento-lista .enlace {
+                font-weight: 500;
+                font-size: 0.7em
+            } 
+}
