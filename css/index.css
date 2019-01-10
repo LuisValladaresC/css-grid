@@ -7,20 +7,27 @@ body {
     height: 100%;
     margin: 0;
     font-family: system-ui;
+    background-color: #fafafa;
 }
 
 .container {
-    background-color: #343a40;
     min-width: 320px;
 }
 
-div.container {
-    background-color: #fafafa;
+.linea-divisoria {
+    max-width: 1024px;
+    width: calc(100% - 10px);
+    border: solid 0.5px #cecece;
+    margin: 28px auto 0;
 }
 
 /* ---------------------- *\
     BARRA DE NAVEGACION
 \* ---------------------- */
+
+header {
+    background-color: #343a40;
+}
 
 .navbar {
     max-width: 1024px;
@@ -71,12 +78,6 @@ div.container {
 /* ---------------------- *\
     SECCION INSTAGRAM
 \* ---------------------- */
-
-.instagram-linea {
-    width: 100%;
-    border: solid 0.5px #cecece;
-    margin: 28px 0 0;
-}
 
 .instagram-encabezado {
     font-size: .9em;
@@ -140,10 +141,59 @@ div.container {
             }
 
 /* ---------------------- *\
+    SECCION PINTEREST
+\* ---------------------- */
+
+.pinterest-grilla {
+    width: 100%;
+    margin: 0 auto;
+    padding: 28px 5px 0;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 252px);
+    grid-gap: 5px;
+    justify-content: center;
+}
+
+    .pinterest-link-container {
+        width: 100%;
+        position: relative;
+        border-radius: 5px;
+        cursor: zoom-in;
+    }
+    .pinterest-link-container:hover {
+        background-color: #f2f2f2;
+    }
+    .pinterest-link-container.item-1-fila {
+        grid-row-end: span 1;
+    }
+    .pinterest-link-container.item-2-filas {
+        grid-row-end: span 2;
+    }
+    .pinterest-link-container.item-3-filas {
+        grid-row-end: span 3;
+    }
+        
+        .pinterest-container-imagen {
+            margin: 8px 8px;
+        }
+
+            .pinterest-container-imagen img {
+                width: 100%;
+                border-radius: 5px;
+            }
+
+/* ---------------------- *\
     MEDIA QUERIES 
 \* ---------------------- */
 
 @media screen and (max-width: 767px) {
+
+    /* ------- GENERALES ------- */
+
+    .linea-divisoria {
+        margin: 18px 0 0;
+    }
 
     /* -- BARRA DE NAVEGACION -- */
 
@@ -165,10 +215,6 @@ div.container {
                 } 
 
     /* -- SECCION DE INSTAGRAM -- */
-
-    .instagram-linea {
-        margin: 18px 0 0;
-    }
     
     .instagram-encabezado {
         font-size: .8em;
@@ -181,6 +227,12 @@ div.container {
 }
 
 @media screen and (max-width: 479px) {
+
+    /* ------- GENERALES ------- */
+
+    .linea-divisoria {
+        margin: 13px 0 0;
+    }
 
     /* -- BARRA DE NAVEGACION -- */
 
@@ -202,10 +254,6 @@ div.container {
             } 
 
     /* -- SECCION DE INSTAGRAM -- */
-    
-    .instagram-linea {
-        margin: 13px 0 0;
-    }
 
     .instagram-encabezado {
         font-size: .7em;
