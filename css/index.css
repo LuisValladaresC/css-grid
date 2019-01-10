@@ -147,7 +147,7 @@ header {
 .pinterest-grilla {
     width: 100%;
     margin: 0 auto;
-    padding: 28px 5px 0;
+    padding: 20px 5px 0;
 
     display: grid;
     grid-template-columns: repeat(auto-fill, 252px);
@@ -158,7 +158,7 @@ header {
     .pinterest-link-container {
         width: 100%;
         position: relative;
-        border-radius: 5px;
+        border-radius: 8px;
         cursor: zoom-in;
     }
     .pinterest-link-container:hover {
@@ -180,7 +180,7 @@ header {
 
             .pinterest-container-imagen img {
                 width: 100%;
-                border-radius: 5px;
+                border-radius: 8px;
             }
 
 /* ---------------------- *\
@@ -192,7 +192,7 @@ header {
     /* ------- GENERALES ------- */
 
     .linea-divisoria {
-        margin: 18px 0 0;
+        margin-top: 18px;
     }
 
     /* -- BARRA DE NAVEGACION -- */
@@ -224,6 +224,12 @@ header {
     .instagram-grilla {
         grid-gap: 3px;
     }
+
+    /* -- SECCION DE PINTEREST -- */
+
+    .pinterest-grilla {
+        padding-top: 10px;
+    }
 }
 
 @media screen and (max-width: 479px) {
@@ -231,7 +237,7 @@ header {
     /* ------- GENERALES ------- */
 
     .linea-divisoria {
-        margin: 13px 0 0;
+        margin-top: 13px;
     }
 
     /* -- BARRA DE NAVEGACION -- */
@@ -262,5 +268,11 @@ header {
 
     .instagram-capa-texto {
         font-size: 0.9em;
+    }
+
+    /* -- SECCION DE PINTEREST -- */
+
+    .pinterest-grilla {
+        padding-top: 6px;
     }
 }
