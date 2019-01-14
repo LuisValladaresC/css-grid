@@ -37,35 +37,35 @@ header {
 
     display: grid;
     grid-template-columns: 3fr 2fr; 
+    align-items: center;
+
 }
 
     .navbar-titulo {
         color: white;
-        margin: 0 0 0 10px;;
-        display: flex;
-        align-items: center;
+        margin: 0 0 0 10px;
     }
 
     .navbar-lista {
-        height: inherit;
-        padding: 0;
-        margin: 0 auto;
+        height: 100%;
+        padding-left: 0;
+        margin: 0 0 0 auto;
 
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(3, auto);
     }
 
         .elemento-lista {
+            height: 100%;
             list-style-type: none;
-            padding: 0 30px;
-            height: inherit;
         }
 
             .elemento-lista .enlace {
+                height: inherit;
                 color: #9a9d93;
                 font-weight: 500;
                 text-decoration: none;
-                
-                height: inherit;
+                padding: 0 15px;
                 
                 display: flex;
                 align-items: center;
@@ -191,7 +191,7 @@ header {
     max-width: 1024px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 70px auto;
+    grid-template-columns: 65px auto;
 }
 
     .movies-navbar {
@@ -199,22 +199,23 @@ header {
         background-color: #b63f3f;
         border-top: solid 1.5px #cecece;
         box-sizing: border-box;
-        padding-top: 10px; 
+        padding: 5px 0; 
         
         display: grid;
         grid-template-rows: 80px 80px 80px 1fr 80px;
-        align-items: center
     }
     
         .movies-navbar-link {
             color: white;
             text-align: center;
             text-decoration: none;
-            display: block;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
         .movies-navbar-link:last-of-type {
             grid-row-start: 5;
-            margin-bottom: 10px;
         }
         
             .navbar-link-icon {
@@ -304,15 +305,11 @@ header {
         .navbar-titulo {
             font-size: 1.4em;
         }
-
-        .elemento-lista {
-            padding: 0 15px;
-        }
-    
-                .elemento-lista .enlace {
-                    font-weight: 500;
-                    font-size: 0.9em
-                } 
+        
+            .elemento-lista .enlace {
+                font-size: 0.9em;
+                padding: 0 15px;
+            } 
 
     /* -- SECCION DE INSTAGRAM -- */
     
@@ -349,14 +346,10 @@ header {
         .navbar-titulo {
             font-size: 1.1em;
         }
-
-        .elemento-lista {
-            padding: 0 10px;
-        }
-    
+        
             .elemento-lista .enlace {
-                font-weight: 500;
-                font-size: 0.7em
+                font-size: 0.7em;
+                padding: 0 10px;
             } 
 
     /* -- SECCION DE INSTAGRAM -- */
