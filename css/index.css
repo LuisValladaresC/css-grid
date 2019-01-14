@@ -190,11 +190,14 @@ header {
 .movies-grilla {
     max-width: 1024px;
     margin: 0 auto;
+
     display: grid;
-    grid-template-columns: 65px auto;
+    grid-template: auto 65px / 65px auto;
+    grid-template-areas: "navbar peliculas" "navbar peliculas"
 }
 
     .movies-navbar {
+        grid-area: navbar;
         height: calc(100vh - 65px);
         background-color: #b63f3f;
         border-top: solid 1.5px #cecece;
@@ -230,7 +233,8 @@ header {
             }
     
     .movies-peliculas {
-        max-height: calc(100vh - 65px);
+        grid-area: peliculas;
+        height: calc(100vh - 65px);
         padding-left: 25px;
         border-top: solid 1.5px #cecece;
         box-sizing: border-box;
@@ -238,7 +242,7 @@ header {
         overflow: auto; 
 
         display: grid;
-        grid-template-rows: auto 1fr auto 1fr auto 1fr
+        grid-template-rows: repeat(3, 1fr 5fr)
     }
 
         .peliculas-titulo {
@@ -288,7 +292,7 @@ header {
     MEDIA QUERIES 
 \* ---------------------- */
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
 
     /* ------- GENERALES ------- */
 
@@ -327,9 +331,54 @@ header {
     .pinterest-grilla {
         padding-top: 10px;
     }
+
+    /* -- SECCION DE MOVIES -- */
+
+    .movies-grilla {
+        grid-template: auto 55px / 55px auto;
+    }
+    
+        .movies-navbar {
+            height: calc(100vh - 55px);
+            padding: 0;
+        }
+
+            .navbar-link-icon {
+                font-size: 1.15em;
+            }
+            .navbar-link-texto {
+                font-size: 0.6em;
+            }
+        
+        .movies-peliculas {
+            height: calc(100vh - 55px);
+            padding-left: 20px;
+        }
+    
+            .peliculas-titulo {
+                margin-bottom: 5px;
+                margin-top: 12px;
+            }
+    
+            .peliculas-seccion {
+                grid-auto-columns: 230px;
+                column-gap: 20px;
+            }
+    
+                .pelicula-contenido {
+                    padding: 5px;    
+                }
+
+                    .pelicula-contenido-titulo {
+                        font-size: 0.8em
+                    }
+                    .pelicula-contenido-descripcion {
+                        font-size: 0.55em
+                    }
+    
 }
 
-@media screen and (max-width: 479px) {
+@media screen and (max-width: 480px) {
 
     /* ------- GENERALES ------- */
 
@@ -346,7 +395,7 @@ header {
         .navbar-titulo {
             font-size: 1.1em;
         }
-        
+
             .elemento-lista .enlace {
                 font-size: 0.7em;
                 padding: 0 10px;
@@ -368,4 +417,47 @@ header {
     .pinterest-grilla {
         padding-top: 6px;
     }
+
+    /* -- SECCION DE MOVIES -- */
+
+    .movies-grilla {
+        grid-template: auto 45px / 45px auto;
+        grid-template-areas: "peliculas peliculas" "navbar navbar"
+    }
+    
+        .movies-navbar {
+            height: 45px;
+            grid-template: 100% / 1fr 1fr 1fr 1fr;
+        }
+        .movies-navbar-link:last-of-type {
+            grid-row-start: initial;
+        }
+
+            .navbar-link-icon {
+                font-size: 1.1em;
+            }
+            .navbar-link-texto {
+                font-size: 0.5em;
+            }
+        
+        .movies-peliculas {
+            height: calc(100vh - 90px);
+            padding-left: 5px;
+        }
+    
+            .peliculas-titulo {
+                font-size: 0.9em;
+            }
+    
+            .peliculas-seccion {
+                grid-auto-columns: 220px;
+                column-gap: 10px;
+            }
+
+                .pelicula-contenido-titulo {
+                    font-size: 0.8em
+                }
+                .pelicula-contenido-descripcion {
+                    font-size: 0.5em
+                }
 }
