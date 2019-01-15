@@ -12,19 +12,19 @@
         <nav class="navbar">
             <h1 class="navbar-titulo">CSS Grid</h1>
             <ul class="navbar-lista">
-                <li class="elemento-lista"><a href="#" class="enlace">Instagram</a></li>
-                <li class="elemento-lista"><a href="#" class="enlace">Pinterest</a></li>
-                <li class="elemento-lista"><a href="#" class="enlace">Movies</a></li>
+                <li class="elemento-lista"><a href="#" id="enlace-instagram" class="enlace">Instagram</a></li>
+                <li class="elemento-lista"><a href="#" id="enlace-pinterest" class="enlace">Pinterest</a></li>
+                <li class="elemento-lista"><a href="#" id="enlace-movies" class="enlace">Movies</a></li>
             </ul>
         </nav>
     </header>
 
     <div class="container">
-        <!-- <section id="instagram">
+        <section id="instagram">
             <hr class="linea-divisoria">
             <p class="instagram-encabezado"><i class="fas fa-th"></i> Publicaciones</p>
 
-            Grilla con 12 imagenes de muestra diseñadas como enlaces
+            <!-- Grilla con 12 imagenes de muestra diseñadas como enlaces -->
             <div class="instagram-grilla">
                 <a href="#" class="instagram-link-container ">
                     <figure class="instagram-container-imagen"><img src="./assets/images/instagram/compu.jpg" alt="Imagen de Contenido"></figure>
@@ -137,7 +137,7 @@
             </div>
         </section>
         
-        <section id="pinterest">
+        <section id="pinterest" style="display: none">
             <hr class="linea-divisoria">
             <div class="pinterest-grilla">
                 <a href="#" class="pinterest-link-container item-3-filas">
@@ -216,9 +216,9 @@
                     </figure>
                 </a>
             </div>
-        </section> -->
+        </section>
 
-        <section id="Movies">
+        <section id="movies" style="display: none">
             <div class="movies-grilla">
                 <div class="movies-navbar">
                     <a href="#" class="movies-navbar-link">
@@ -362,9 +362,7 @@
             </div>
         </section>
 
-        <footer>
-            
-        </footer>
+        <script src="./js/index.js"></script>
     </div>
 </body>
 </html>
