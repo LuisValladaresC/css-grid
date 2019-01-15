@@ -1,0 +1,53 @@
+/* ---------------------- *\
+    BARRA DE NAVEGACION
+\* ---------------------- */
+
+header {
+    background-color: #343a40;
+}
+
+.navbar {
+    max-width: 1024px;
+    height: 65px;
+    margin: 0 auto;
+    background-color: #343a40;
+
+    display: grid;
+    grid-template-columns: 3fr 2fr; 
+    align-items: center;
+
+}
+
+    .navbar-titulo {
+        color: white;
+        margin: 0 0 0 10px;
+    }
+
+    .navbar-lista {
+        height: 100%;
+        padding-left: 0;
+        margin: 0 0 0 auto;
+
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+    }
+
+        .elemento-lista {
+            height: 100%;
+            list-style-type: none;
+        }
+
+            .elemento-lista .enlace {
+                height: inherit;
+                color: #9a9d93;
+                font-weight: 500;
+                text-decoration: none;
+                padding: 0 15px;
+                
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .elemento-lista .enlace:hover {
+                color: #c9ccbe;
+            }

@@ -1,0 +1,71 @@
+/* ---------------------- *\
+    SECCION INSTAGRAM
+\* ---------------------- */
+
+.instagram-linea {
+    max-width: 1024px;
+    width: calc(100% - 10px);
+    border: solid 0.5px #cecece;
+    margin: 28px auto 0;
+}
+
+.instagram-encabezado {
+    font-size: .9em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    width: fit-content;
+
+    border-top: black solid 0.5px;
+    padding: 1em 0;
+    margin: 0 auto;
+}
+
+.instagram-grilla {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0 5px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 28px;
+}
+
+    .instagram-link-container {
+        width: 100%;
+        position: relative;
+    }
+
+        .instagram-container-imagen {
+            margin: 0;
+        }
+
+            .instagram-container-imagen img {
+                width: 100%;
+                vertical-align: top;
+            }
+
+        .instagram-capa {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        .instagram-capa:hover {
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+            .instagram-capa-texto {
+                height: 100%;
+                margin: 0;
+                color: transparent;
+            }
+            .instagram-capa-texto:hover {
+                color: white;
+                font-weight: 600;
+
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+            }
