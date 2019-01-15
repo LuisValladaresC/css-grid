@@ -3,7 +3,7 @@
 \* ---------------------- */
 
 .pinterest-grilla {
-    width: 100%;
+    max-width: 1024px;
     margin: 0 auto;
     padding: 20px 5px 0;
 
@@ -46,13 +46,15 @@
 @media screen and (max-width: 768px) {
 
     .pinterest-grilla {
-        padding-top: 10px;
+        padding: 6px 0;
+        grid-template-columns: repeat(auto-fill, 230px);
     }
 }
 
 @media screen and (max-width: 480px) {
 
     .pinterest-grilla {
-        padding-top: 6px;
+        padding: 3px 0;
+        grid-template-columns: repeat(auto-fill, 200px);
     }
 }
