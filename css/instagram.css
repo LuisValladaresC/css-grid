@@ -2,29 +2,10 @@
     SECCION INSTAGRAM
 \* ---------------------- */
 
-.instagram-linea {
-    max-width: 1024px;
-    width: calc(100% - 10px);
-    border: solid 0.5px #cecece;
-    margin: 28px auto 0;
-}
-
-.instagram-encabezado {
-    font-size: .9em;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    width: fit-content;
-
-    border-top: black solid 0.5px;
-    padding: 1em 0;
-    margin: 0 auto;
-}
-
 .instagram-grilla {
-    max-width: 1024px;
+    max-width: 955px;
     margin: 0 auto;
-    padding: 0 5px;
+    padding: 28px 20px;
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -57,15 +38,54 @@
         }
 
             .instagram-capa-texto {
-                height: 100%;
-                margin: 0;
                 color: transparent;
+                margin: 0;
+                height: 100%;
+                font-weight: 600;
+
+                display: grid;
+                grid-template: 100% / auto 30px auto;
+                align-items: center;
             }
             .instagram-capa-texto:hover {
                 color: white;
-                font-weight: 600;
-
-                display: flex;
-                align-items: center;
-                justify-content: space-evenly;
             }
+            .instagram-capa-texto span:first-child {
+                justify-self: self-end;
+            }
+            .instagram-capa-texto span:last-child {
+                grid-column-start: 3;
+            }
+
+/* ----- MEDIA QUERIES ----- */
+
+@media screen and (max-width: 768px) {
+    
+    .instagram-grilla {
+        grid-gap: 3px;
+        padding: 6px 0;
+    }
+
+    .instagram-capa-texto:hover {
+        grid-template: 1fr 1fr / 100%;
+        align-items: initial;
+        justify-items: center;
+    }
+
+    .instagram-capa-texto span:first-child {
+        justify-self: initial;
+        align-self: flex-end;
+        margin-bottom: 3px
+    }
+    .instagram-capa-texto span:last-child {
+        grid-column-start: initial;
+        margin-top: 3px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .instagram-capa-texto {
+        font-size: 0.9em;
+    }
+}

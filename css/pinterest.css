@@ -40,3 +40,19 @@
                 width: 100%;
                 border-radius: 8px;
             }
+
+/* ----- MEDIA QUERIES ----- */
+
+@media screen and (max-width: 768px) {
+
+    .pinterest-grilla {
+        padding-top: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .pinterest-grilla {
+        padding-top: 6px;
+    }
+}
