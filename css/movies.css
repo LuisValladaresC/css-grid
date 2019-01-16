@@ -7,20 +7,20 @@
     margin: 0 auto;
 
     display: grid;
-    grid-template: auto 65px / 65px auto;
-    grid-template-areas: "navbar peliculas" "navbar peliculas"
+    grid-template: auto auto / 90px auto;
+    grid-template-areas: "navbar peliculas" "navbar peliculas";
 }
+
 
     .movies-navbar {
         grid-area: navbar;
         height: calc(100vh - 65px);
         background-color: #b63f3f;
-        border-top: solid 1.5px #cecece;
+        padding: 7px 0;
         box-sizing: border-box;
-        padding: 5px 0; 
         
         display: grid;
-        grid-template-rows: 80px 80px 80px 1fr 80px;
+        grid-template-rows: 90px 90px 90px 1fr 90px;
     }
     
         .movies-navbar-link {
@@ -28,6 +28,7 @@
             text-align: center;
             text-decoration: none;
             height: 100%;
+            
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -38,55 +39,60 @@
         
             .navbar-link-icon {
                 width: 100%;
-                font-size: 1.2em;
+                font-size: 1.5em;
             }
             
             .navbar-link-texto {
                 margin: 0px;
-                font-size: 0.7em;
-                font-weight: 500;
+                font-size: 1em;
+                font-weight: 450;
             }
     
     .movies-peliculas {
         grid-area: peliculas;
         height: calc(100vh - 65px);
-        padding-left: 25px;
-        border-top: solid 1.5px #cecece;
+        padding-left: 15px;
+        padding-bottom: 20px;
         box-sizing: border-box;
-        box-shadow: -5px 10px 10px rgba(0, 0, 0, .2) inset;
-        overflow: auto; 
 
         display: grid;
-        grid-template-rows: repeat(3, 1fr 5fr)
+        grid-template-rows: repeat(3, minmax(auto, 60px) minmax(213px, auto));
+        overflow: auto;
     }
 
         .peliculas-titulo {
             font-weight: 700;
-            font-size: 1em;
-            margin-bottom: 10px;
+            font-size: 1.2em;
+            margin-bottom: 5px;
+            align-self: flex-end
         }
 
         .peliculas-seccion {
+            padding-right: 15px;
+
             display: grid;
             grid-auto-flow: column;
-            grid-auto-columns: 240px;
-            column-gap: 30px;
+            grid-auto-columns: 320px;
+            column-gap: 40px;
         }
 
             .pelicula-contenedor-imagen {
                 margin: 0;
                 position: relative;
+                cursor: pointer;
             }
 
                 .pelicula-imagen {
                     width: 100%;
                     vertical-align: top;
+                    border-radius: 5px;
                 }
 
                 .pelicula-contenido {
                     background-color: rgba(182, 63, 63, .6);
-                    padding: 10px;
+                    padding: 12px;
                     color: white;
+                    border-radius: 0 0 5px 5px;
 
                     position: absolute;
                     bottom: 0;       
@@ -95,12 +101,12 @@
                     .pelicula-contenido-titulo {
                         margin: 0;
                         font-weight: 600;
-                        font-size: .9em
+                        font-size: 1.25em
                     }
 
                     .pelicula-contenido-descripcion {
                         margin: 0;
-                        font-size: .6em
+                        font-size: .8em
                     }
 
 /* ----- MEDIA QUERIES ----- */
@@ -109,44 +115,53 @@
 
     .movies-grilla {
         grid-template: auto 55px / 55px auto;
+        grid-template-areas: "peliculas peliculas" "navbar navbar"
     }
     
         .movies-navbar {
-            height: calc(100vh - 55px);
+            height: 55px;
+            grid-template: 100% / 1fr 1fr 1fr 1fr;
             padding: 0;
+        }
+        .movies-navbar-link:last-of-type {
+            grid-row-start: initial;
         }
 
             .navbar-link-icon {
-                font-size: 1.15em;
+                font-size: 1.3em;
             }
             .navbar-link-texto {
-                font-size: 0.6em;
+                font-size: 0.8em;
             }
         
         .movies-peliculas {
-            height: calc(100vh - 55px);
-            padding-left: 20px;
+            height: calc(100vh - 110px);
+            padding-left: 5px;
+            padding-bottom: 10px;
+            grid-template-rows: repeat(3, minmax(auto, 60px) minmax(199px, auto));
         }
-    
+
             .peliculas-titulo {
-                margin-bottom: 5px;
-                margin-top: 12px;
+                font-size: 1.1em;
             }
-    
+            .peliculas-titulo:first-child {
+                margin-top: 10px;
+            }
+
             .peliculas-seccion {
-                grid-auto-columns: 230px;
+                grid-auto-columns: 300px;
                 column-gap: 20px;
             }
     
                 .pelicula-contenido {
-                    padding: 5px;    
+                    padding: 8px;    
                 }
 
                     .pelicula-contenido-titulo {
-                        font-size: 0.8em
+                        font-size: 1.15em
                     }
                     .pelicula-contenido-descripcion {
-                        font-size: 0.55em
+                        font-size: 0.7em
                     }
     
 }
@@ -155,42 +170,44 @@
 
     .movies-grilla {
         grid-template: auto 45px / 45px auto;
-        grid-template-areas: "peliculas peliculas" "navbar navbar"
     }
     
         .movies-navbar {
             height: 45px;
-            grid-template: 100% / 1fr 1fr 1fr 1fr;
-        }
-        .movies-navbar-link:last-of-type {
-            grid-row-start: initial;
+            border-top: solid 1.5px #cecece;
+            box-sizing: border-box;
         }
 
             .navbar-link-icon {
-                font-size: 1.1em;
+                font-size: 1.15em;
             }
             .navbar-link-texto {
-                font-size: 0.5em;
+                font-size: 0.65em;
             }
         
         .movies-peliculas {
             height: calc(100vh - 90px);
-            padding-left: 5px;
+            padding-bottom: 5px;
+            grid-template-rows: repeat(3, minmax(auto, 60px) minmax(186px, auto));
         }
     
             .peliculas-titulo {
-                font-size: 0.9em;
+                font-size: 1.05em;
+            }
+            .peliculas-titulo:first-child {
+                margin-top: 10px;
             }
     
             .peliculas-seccion {
-                grid-auto-columns: 220px;
+                padding-left: 5px;
+                grid-auto-columns: 280px;
                 column-gap: 10px;
             }
 
                 .pelicula-contenido-titulo {
-                    font-size: 0.8em
+                    font-size: 1.1em
                 }
                 .pelicula-contenido-descripcion {
-                    font-size: 0.5em
+                    font-size: 0.65em
                 }
 }
