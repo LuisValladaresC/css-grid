@@ -7,18 +7,18 @@
     margin: 0 auto;
 
     display: grid;
-    grid-template: auto auto / 90px auto;
-    grid-template-areas: "navbar peliculas" "navbar peliculas";
+    grid-template: calc(100vh - 65px) / 90px 1fr;
+    grid-template-areas: "navbar peliculas";
 }
 
 
     .movies-navbar {
-        grid-area: navbar;
-        height: calc(100vh - 65px);
+        height: 100%;
         background-color: #b63f3f;
         padding: 7px 0;
         box-sizing: border-box;
         
+        grid-area: navbar;
         display: grid;
         grid-template-rows: 90px 90px 90px 1fr 90px;
     }
@@ -49,15 +49,15 @@
             }
     
     .movies-peliculas {
-        grid-area: peliculas;
-        height: calc(100vh - 65px);
-        padding-left: 15px;
+        height: 100%;
+        margin: 0 15px;
         padding-bottom: 20px;
         box-sizing: border-box;
-
-        display: grid;
-        grid-template-rows: repeat(3, minmax(auto, 60px) minmax(213px, auto));
         overflow: auto;
+        
+        grid-area: peliculas;
+        display: grid;
+        grid-template-rows: repeat(3, minmax(min-content, 60px) minmax(min-content, 225px));
     }
 
         .peliculas-titulo {
@@ -68,15 +68,13 @@
         }
 
         .peliculas-seccion {
-            padding-right: 15px;
-
             display: grid;
             grid-auto-flow: column;
             grid-auto-columns: 320px;
             column-gap: 40px;
         }
 
-            .pelicula-contenedor-imagen {
+            .pelicula-contenedor {
                 margin: 0;
                 position: relative;
                 cursor: pointer;
@@ -114,13 +112,12 @@
 @media screen and (max-width: 768px) {
 
     .movies-grilla {
-        grid-template: auto 55px / 55px auto;
-        grid-template-areas: "peliculas peliculas" "navbar navbar"
+        grid-template: calc(100vh - 110px) 55px / 1fr;
+        grid-template-areas: "peliculas" "navbar"
     }
     
         .movies-navbar {
-            height: 55px;
-            grid-template: 100% / 1fr 1fr 1fr 1fr;
+            grid-template: 100% / repeat(4, 1fr);
             padding: 0;
         }
         .movies-navbar-link:last-of-type {
@@ -135,10 +132,10 @@
             }
         
         .movies-peliculas {
-            height: calc(100vh - 110px);
-            padding-left: 5px;
+            margin: 0 5px;
             padding-bottom: 10px;
-            grid-template-rows: repeat(3, minmax(auto, 60px) minmax(199px, auto));
+
+            grid-template-rows: repeat(3, minmax(min-content, 50px) minmax(min-content, 210px));
         }
 
             .peliculas-titulo {
@@ -169,11 +166,10 @@
 @media screen and (max-width: 480px) {
 
     .movies-grilla {
-        grid-template: auto 45px / 45px auto;
+        grid-template: calc(100vh - 90px) 45px / 1fr;
     }
     
         .movies-navbar {
-            height: 45px;
             border-top: solid 1.5px #cecece;
             box-sizing: border-box;
         }
@@ -186,9 +182,9 @@
             }
         
         .movies-peliculas {
-            height: calc(100vh - 90px);
             padding-bottom: 5px;
-            grid-template-rows: repeat(3, minmax(auto, 60px) minmax(186px, auto));
+            
+            grid-template-rows: repeat(3, minmax(min-content, 40px) minmax(min-content, 200px));
         }
     
             .peliculas-titulo {
@@ -199,7 +195,6 @@
             }
     
             .peliculas-seccion {
-                padding-left: 5px;
                 grid-auto-columns: 280px;
                 column-gap: 10px;
             }

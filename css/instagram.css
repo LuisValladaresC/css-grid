@@ -43,18 +43,16 @@
                 height: 100%;
                 font-weight: 600;
 
-                display: grid;
-                grid-template: 100% / auto 30px auto;
+                display: flex;
+                justify-content: center;
                 align-items: center;
             }
             .instagram-capa-texto:hover {
                 color: white;
             }
-            .instagram-capa-texto span:first-child {
-                justify-self: self-end;
-            }
-            .instagram-capa-texto span:last-child {
-                grid-column-start: 3;
+
+            .instagram-capa-texto span {
+                margin: 0 15px;
             }
 
 /* ----- MEDIA QUERIES ----- */
@@ -63,23 +61,15 @@
     
     .instagram-grilla {
         grid-gap: 3px;
-        padding: 6px 0;
+        padding: 10px 5px;
     }
 
-    .instagram-capa-texto:hover {
-        grid-template: 1fr 1fr / 100%;
-        align-items: initial;
-        justify-items: center;
+    .instagram-capa-texto {
+        flex-direction: column
     }
 
-    .instagram-capa-texto span:first-child {
-        justify-self: initial;
-        align-self: flex-end;
-        margin-bottom: 3px
-    }
-    .instagram-capa-texto span:last-child {
-        grid-column-start: initial;
-        margin-top: 3px;
+    .instagram-capa-texto span {
+        margin: 1px 0;
     }
 }
 
