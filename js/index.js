@@ -15,7 +15,7 @@ const movies = {
 // DEFINIMOS LA PAGINA DE INICIO
 
 var paginaActual = instagram;
-instagram.enlace.style.color = "white";
+instagram.enlace.classList.add("enlace-activo");
 pinterest.seccion.style.display = "none";
 movies.seccion.style.display = "none";
 
@@ -31,8 +31,8 @@ function mostrarSeccion(paginaNueva) {
     paginaActual.seccion.style.display = "none";
     paginaNueva.seccion.style.display = "block";
     
-    paginaActual.enlace.style.color = "#9a9d93";
-    paginaNueva.enlace.style.color = "white";
+    paginaActual.enlace.classList.remove("enlace-activo")
+    paginaNueva.enlace.classList.add("enlace-activo");
     
     paginaActual = paginaNueva;
 }
