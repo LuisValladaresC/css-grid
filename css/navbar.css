@@ -4,10 +4,11 @@
 
 header {
     background-color: #343a40;
+    box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.6);
 }
 
 .navbar {
-    max-width: 1024px;
+    max-width: 1050px;
     height: 65px;
     margin: 0 auto;
     background-color: #343a40;
@@ -61,11 +62,11 @@ header {
     }
     
         .navbar-titulo {
-            font-size: 1.4em;
+            font-size: 1.45em;
         }
         
             .elemento-lista .enlace {
-                font-size: 0.9em;
+                font-size: 0.95em;
                 padding: 0 15px;
             } 
 }
@@ -77,11 +78,11 @@ header {
     }
     
         .navbar-titulo {
-            font-size: 1.1em;
+            font-size: 1.4em;
         }
 
             .elemento-lista .enlace {
-                font-size: 0.7em;
+                font-size: 0.9em;
                 padding: 0 10px;
             } 
 }
