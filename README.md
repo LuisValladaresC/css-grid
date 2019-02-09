@@ -1,4 +1,6 @@
+
 # CSS-Grid
+
 CSS Grids nos permite generar layouts o distribuciones de contenido  en nuestro sitio web de forma eficiente mediante cuadriculas compuesta por filas y columnas
 
 ## Indice
@@ -49,7 +51,7 @@ CSS Grids nos permite generar layouts o distribuciones de contenido  en nuestro 
 <div id='uso-propiedades'/>
 
 ## Uso y Propiedades
-Para disponer de todas las características que nos brinda CSS Grid primero debemos definir un *Grid Container*, es decir, definir en una etiqueta que haga la función de contenedor en nuestro HTML con un display de tipo grid. Cada uno de sus hijos directores (*Grid Items*) compondrán la cuadricula, lo que nos permitirá alinearlos a nuestro antojo.
+Para disponer de todas las características que nos brinda CSS Grid primero debemos definir un *Grid Container*, es decir, definirle a una etiqueta que haga la función de contenedor en nuestro HTML un display de tipo grid. Cada uno de sus hijos directores (*Grid Items*) compondrán la cuadricula, lo que nos permitirá alinearlos a nuestro antojo.
 
 ~~~
 body { 
@@ -59,9 +61,9 @@ body {
 
 <div id='uso-propiedades'/>
 
-### grid-template
+## grid-template
 
-Define el tamaño y disposición de filas y columnas que tendrá el *Grid Container*, para definir una cuadricula simplemente colocamos sus tamaño separados  por un espacio y a la vez separamos las filas de columnas mediante una pleca (/).
+Define el tamaño y disposición de filas y columnas que tendrá el Grid Container. Para definir una cuadricula simplemente colocamos el tamaño de cada una de sus filas y columnas separados por un espacio y las filas de columnas por una pleca (/).
 
 ~~~
 body { 
@@ -74,11 +76,15 @@ Aquí estaríamos definiendo en el *Grid Container* una cuadricula de 2*2, 2 fil
 
 <div id='grid-template-rows'/>
 
-**grid-template-rows:** define únicamente la disposición de filas mediante su alto. `grid-template-rows: 500px 500px;`
+**grid-template-rows:** define únicamente la disposición de filas mediante su alto.
+
+`grid-template-rows: 500px 500px;`
 
 <div id='grid-template-columns'/>
 
-**grid-template-columns:** define únicamente  la disposición de columnas mediante su ancho. `grid-template-columns: 200px 600px;`
+**grid-template-columns:** define únicamente  la disposición de columnas mediante su ancho. 
+
+`grid-template-columns: 200px 600px;`
 
 <div id='grid-template-consejos'/>
 
@@ -86,19 +92,39 @@ Aquí estaríamos definiendo en el *Grid Container* una cuadricula de 2*2, 2 fil
 
 Para definir el tamaño de las filas y columnas podemos utilizar cualquier unidad de medida, pero hay ciertos valores y funciones que nos pueden ayudar a hacerlo mas fácilmente:
 
- - **fracciones (fr)** - es una unidad de medida exclusiva para *CSS Grid* que representa una fracción del espacio disponible en el contenedor de la cuadricula. `grid-template: 100px / 100px 1fr 3fr;` Define una cuadricula de 1*3, es decir, 1 fila de 100px y 3 columnas, la primera de 100px y las otras 2 de ancho flexible según el ancho restante en el *Grid Container*. La segunda columna tendrá un 25% del ancho restante y la tercera 3 veces mas en relación a la segunda, es decir, un 75% del ancho restante.
+ - **fracciones (fr)** - es una unidad de medida exclusiva para *CSS Grid* que representa una fracción del espacio disponible en el contenedor de la cuadricula. 
+ 
+	 `grid-template: 100px / 100px 1fr 3fr;`
+ 
+	 Define una cuadricula de 1*3, es decir, 1 fila de 100px y 3 columnas, la primera de 100px y las otras 2 de ancho flexible según el ancho restante en el *Grid Container*. La segunda columna tendrá un 25% del ancho restante y la tercera 3 veces mas en relación a la segunda, es decir, un 75% del ancho restante.
 
-  - **auto** - define un tamaño automático para una fila o columna según el alto si es fila o ancho si es columna. `grid-template: 100px / auto auto;` Define una cuadricula de 1*2, es decir, 1 fila de 100px y 2 columnas de ancho definido por su contenido.
-
-  - **repeat (cantidad, tamaño)** - esta función nos permite repetir un valor x cantidad de veces. `grid-template: 100px / repeat(4, 250px);` Define una cuadricula de 1*4, es decir, con 1 fila y 4 columnas de 250px.
+  - **auto** - define un tamaño automático para una fila o columna según el alto si es fila o ancho si es columna. 
   
-  - **repeat (auto-fill, tamaño)** - si en vez de un numero llenamos la cantidad con el valor de *auto-fill* nos permitiría crear una cantidad de columnas o filas según quepan en el *Grid Container* con el tamaño definido. `grid-template: 100px / repeat(auto-fill, 250px);` Define una cuadricula con 1 fila de 100px y una cantidad de columnas basada en el ancho del contenedor, por ejemplo, si nuestro *Grid Container* fuese de 750px crearía una cuadricula de 1*3, es decir, con 3 columnas de 250px
+	`grid-template: 100px / auto auto;` 
 
- - **minmax ()** - define un ancho flexible entre 2 números (ancho minimo y maximo) para una fila o columna. `grid-template: 100px / minmax(100px, 500px);` Define una cuadricula de 1*1, es decir, 1 fila de 100px y 1 columnas de 500px solo si el *Grid Container* tiene un ancho mínimo de 500px, en caso contrario, el ancho de la columna podrá achicarse hasta llegar a los 100px como mínimo.
+	Define una cuadricula de 1*2, es decir, 1 fila de 100px y 2 columnas de ancho definido por su contenido.
+
+  - **repeat (cantidad, tamaño)** - esta función nos permite repetir un valor x cantidad de veces. 
+
+	`grid-template: 100px / repeat(4, 250px);` 
+
+	Define una cuadricula de 1*4, es decir, con 1 fila y 4 columnas de 250px.
+  
+  - **repeat (auto-fill, tamaño)** - si en vez de un numero llenamos la cantidad con el valor de *auto-fill* nos permitiría crear una cantidad de columnas o filas según quepan en el *Grid Container* con el tamaño definido. 
+
+	`grid-template: 100px / repeat(auto-fill, 250px);` 
+
+	Define una cuadricula con 1 fila de 100px y una cantidad de columnas basada en el ancho del contenedor, por ejemplo, si nuestro *Grid Container* fuese de 750px crearía una cuadricula de 1*3, es decir, con 3 columnas de 250px
+
+ - **minmax ()** - define un ancho flexible entre 2 números (ancho minimo y maximo) para una fila o columna. 
+
+	`grid-template: 100px / minmax(100px, 500px);` 
+
+	Define una cuadricula de 1*1, es decir, 1 fila de 100px y 1 columnas de 500px solo si el *Grid Container* tiene un ancho mínimo de 500px, en caso contrario, el ancho de la columna podrá achicarse hasta llegar a los 100px como mínimo.
 
 <div id='grid-gap'/>
 
-### grid-gap
+## grid-gap
 
 Define un espaciado entre filas y columnas sin añadirlo a los bordes externos de la cuadricula. Puede recibir un valor para ambos o 2 valores separados, uno para filas y otro para columnas;
 ~~~
@@ -113,17 +139,19 @@ Aquí estaríamos definiendo una separación de 10px entre las filas y de 5px en
 
 <div id='grid-row-gap'/>
 
- - **grid-row-gap:**  define el espaciado entre filas.
- `grid-row-gap: 10px;`
+**grid-row-gap** -  define el espaciado entre filas.
+ 
+`grid-row-gap: 10px;`
 
 <div id='grid-column-gap'/>
 
- - **grid-column-gap:** define el espaciado entre columnas.
+**grid-column-gap** - define el espaciado entre columnas.
+ 
 `grid-column-gap: 5px;`
 
 <div id='grid-row-column'/>
 
-### grid-row | grid-column
+## grid-row | grid-column
 
 Modifica el flujo normal de un *Grid Item* definiendo la fila | columna de comienzo y final, permitiendo también de esta manera definir cuantas filas | columnas abarcara. 
 
@@ -152,19 +180,27 @@ Aquí estamos definiendo un *Grid Container* o cuadricula de 2*2, en la cual mod
 
 <div id='grid-row-start'/>
 
-**grid-row-start** - define únicamente la *Grid Line* en filas de comienzo para un *Grid Item*. `grid-row-start: 1;`
+**grid-row-start** - define únicamente la *Grid Line* en filas de comienzo para un *Grid Item*. 
+
+`grid-row-start: 1;`
 
 <div id='grid-row-end'/>
 
-**grid-row-end** - define únicamente  la *Grid Line* en filas hasta donde llegara un *Grid Item*. `grid-row-end: 3;`
+**grid-row-end** - define únicamente  la *Grid Line* en filas hasta donde llegara un *Grid Item*. 
+
+`grid-row-end: 3;`
 
 <div id='grid-column-start'/>
 
-**grid-column-start** - define únicamente  la *Grid Line* en columnas de comienzo para un *Grid Item*. `grid-column-start: 2;`
+**grid-column-start** - define únicamente  la *Grid Line* en columnas de comienzo para un *Grid Item*. 
+
+`grid-column-start: 2;`
 
 <div id='grid-column-end'/>
 
-**grid-column-end** - define únicamente  la *Grid Line* en columnas hasta donde llegara un *Grid Item*. `grid-column-end: 3;`
+**grid-column-end** - define únicamente  la *Grid Line* en columnas hasta donde llegara un *Grid Item*. 
+
+`grid-column-end: 3;`
 
 <div id='grid-row-column-consejos'/>
 
@@ -172,15 +208,21 @@ Aquí estamos definiendo un *Grid Container* o cuadricula de 2*2, en la cual mod
 
 Para definir la cantidad de filas o columnas que abarcara un *Grid Item* o en donde comenzara podemos utilizar ciertos valores que nos pueden ayudar a hacerlo mas fácilmente:
 
- - **-1** - hace referencia a todas las filas existentes y lo podemos utilizar para indicarle a un *Grid Item* que abarque todas las columnas o filas de un contenedor. `grid-row: 1 / -1;`
+ - **-1** - hace referencia a todas las filas existentes y lo podemos utilizar para indicarle a un *Grid Item* que abarque todas las columnas o filas de un contenedor. 
+
+	`grid-row: 1 / -1;`
  
- - **span** - hace referencia directamente al numero de filas o columnas que abarcara y solo se puede utilizar con las propiedades grid-row y grid-column. `grid-row: span 3;`
+ - **span** - hace referencia directamente al numero de filas o columnas que abarcara y solo se puede utilizar con las propiedades grid-row y grid-column. 
+
+	`grid-row: span 3;`
  
- - **auto** - define el final o inicio de una fila o columna de manera automática. `grid-column: 2 / auto;`
+ - **auto** - define el final o inicio de una fila o columna de manera automática. 
+
+	`grid-column: 2 / auto;`
 
 <div id='grid-auto-flow'/>
 
-### grid-auto-flow
+## grid-auto-flow
 
 Define la dirección en donde se ubicaran los elemento que no estén definidos como filas y columnas dentro del *Grid Container*, es decir, el *Grid Implicito*, el cual, por defecto los ubica como filas (row).
 
@@ -203,9 +245,9 @@ Aquí estamos definiendo una cuadricula de 2*2, con un tamaño especifico para u
 
 <div id='grid-template-areas'/>
 
-### grid-template-areas
+## grid-template-areas
 
-Define multiples *Grid Area* dentro del *Grid Container*, asignandole un nombre personalizado a cada una de ellas, los cuales, nos permitirán modificar de manera dinámica la ubicación y cuantas filas o columnas abarcaran nuestros Grid Items en la cuadricula.
+Define multiples *Grid Area* dentro del *Grid Container*, mediante un nombre personalizado para cada una de ellas, las cuales, nos permitirán modificar de manera dinámica la ubicación y cuantas filas o columnas abarcaran nuestros Grid Items en la cuadricula.
 
 Para definir un *Grid Area* en nuestra cuadricula utilizamos comillas("") para indicar una fila y adentro definimos las columnas mediante un nombre personalizado o un punto(.) para que la celda valla vacía, y los valores los separamos con un espacio.
 
@@ -220,7 +262,7 @@ Aquí estamos definiendo una cuadricula de 3*2 , en la cual, asignamos multiples
 
 <div id='grid-area'/>
 
-**grid-area** - asigna un *Grid Area* a un *Grid Item*, y se usa en conjunto para poder trabajar con la propiedad *grid-template-areas*.
+**grid-area** - asigna un *Grid Area* mediante su nombre a un *Grid Item*, y se usa en conjunto para poder trabajar con la propiedad *grid-template-areas*.
 ~~~
 	.hijo-menu {
 		grid-area: menu;
@@ -251,9 +293,9 @@ Aquí estamos asignando las *Grid Areas* que declaramos en el *Grid Container* a
 
 <div id='align-justify-content'/>
 
-### align-content | justify-content
+## align-content | justify-content
 
-Define la distribución de las filas / columnas que componen el *Grid Container*, permitiendo alinear esto elementos de manera simétrica en su espacio vertical / horizontal.
+Define la distribución de las filas / columnas que componen el *Grid Container*, permitiendo alinear estos elementos de manera simétrica en su espacio vertical / horizontal.
 
 Para definir el tipo de alineación de nuestros *Grid Items* podemos utilizar cualquiera de los siguientes valores:
 
@@ -271,9 +313,11 @@ Para definir el tipo de alineación de nuestros *Grid Items* podemos utilizar cu
 
 <div id='align-justify-items'/>
 
-### align-items | justify-items
+## align-items | justify-items
 
-Define la distribución de los elementos contenidos en los *Grid Items* permitiendo alinear estos elementos de manera simétrica en su espacio vertical / horizontal. Estas propiedades la definimos en el *Grid Container* y se aplican en todos sus *Grid Items*. 
+Define la distribución de los elementos contenidos en los *Grid Items* permitiendo alinear estos elementos de manera simétrica en su espacio vertical / horizontal. 
+
+Cualquiera de estas 2 propiedades se definen en el *Grid Container* y les podemos asignar los siguientes valores: 
 
   - **flex-start** - ubica los elementos al inicio de su espacio vertical (arriba) si la propiedad es *align-items* o  al inicio de su espacio horizontal (izquierda) si la propiedad es *justify-items*.
  
@@ -287,8 +331,8 @@ Para alinear un *Grid Item* de manera individual podemos utilizar las siguientes
 
 <div id='align-self'/>
 
- **align-self** - ubica los elementos de un *Grid Item* especifico en su espacio vertical.
+**align-self** - ubica los elementos de un *Grid Item* especifico en su espacio vertical.
 
 <div id='justify-self'/>
 
- **justify-self** - ubica los elementos de un *Grid Item* especifico en su espacio horizontal.
+**justify-self** - ubica los elementos de un *Grid Item* especifico en su espacio horizontal.
